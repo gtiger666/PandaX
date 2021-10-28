@@ -1,0 +1,2351 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Panda网关",
+    "description": "Panda网关",
+    "version": ""
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/admin/adminAdd": {
+      "post": {
+        "summary": "添加账号",
+        "operationId": "AdminAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/adminLogin": {
+      "post": {
+        "summary": "登录",
+        "operationId": "AdminLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminLoginReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/adminUpdate": {
+      "put": {
+        "summary": "更新账号",
+        "operationId": "AdminUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/changeAvatar": {
+      "post": {
+        "summary": "修改头像",
+        "operationId": "ChangeAvatar",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminChangeAvatarReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/delete": {
+      "delete": {
+        "summary": "删除账号",
+        "operationId": "AdminDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/deleteBatch": {
+      "delete": {
+        "summary": "批量删除账号",
+        "operationId": "AdminDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/find": {
+      "post": {
+        "summary": "查询一个账号",
+        "operationId": "AdminFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/info": {
+      "get": {
+        "summary": "账户信息",
+        "operationId": "AdminInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/list": {
+      "post": {
+        "summary": "账号列表",
+        "operationId": "AdminList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminListReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/logout": {
+      "post": {
+        "summary": "退出登录",
+        "operationId": "AdminLogout",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/admin/updateadminpassword": {
+      "put": {
+        "summary": "修改密码",
+        "operationId": "Updateadminpassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AdminReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminUpdatePwdReq"
+            }
+          }
+        ],
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/systemApi/add": {
+      "post": {
+        "summary": "添加api",
+        "operationId": "SystemApiAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemApi/delete": {
+      "delete": {
+        "summary": "删除api",
+        "operationId": "SystemApiDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemApi/deleteBatch": {
+      "delete": {
+        "summary": "批量删除api",
+        "operationId": "SystemApiDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemApi/find": {
+      "post": {
+        "summary": "查询一个api",
+        "operationId": "SystemApiFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemApi/list": {
+      "post": {
+        "summary": "api列表",
+        "operationId": "SystemApiList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemApi/update": {
+      "put": {
+        "summary": "更新api",
+        "operationId": "SystemApiUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemApiPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemApi"
+        ]
+      }
+    },
+    "/systemDepartment/add": {
+      "post": {
+        "summary": "添加部门",
+        "operationId": "SystemDepartmentAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/delete": {
+      "delete": {
+        "summary": "删除部门",
+        "operationId": "SystemDepartmentDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/deleteBatch": {
+      "delete": {
+        "summary": "批量删除部门",
+        "operationId": "SystemDepartmentDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/find": {
+      "post": {
+        "summary": "查询以一个部门",
+        "operationId": "SystemDepartmentFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/list": {
+      "post": {
+        "summary": "部门列表",
+        "operationId": "SystemDepartmentList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/parentList": {
+      "post": {
+        "summary": "父级部门列表",
+        "operationId": "SystemDepartmentParentList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemDepartment/update": {
+      "put": {
+        "summary": "更新部门",
+        "operationId": "SystemDepartmentUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemDepartmentPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemDepartment"
+        ]
+      }
+    },
+    "/systemMenu/add": {
+      "post": {
+        "summary": "添加菜单",
+        "operationId": "MenuAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/delete": {
+      "delete": {
+        "summary": "删除菜单",
+        "operationId": "MenuDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/deleteBatch": {
+      "delete": {
+        "summary": "批量删除菜单",
+        "operationId": "MenuDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/find": {
+      "post": {
+        "summary": "查询一个菜单",
+        "operationId": "MenuFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/list": {
+      "post": {
+        "summary": "菜单列表",
+        "operationId": "MenuList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuListReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/parentList": {
+      "post": {
+        "summary": "获取父级菜单",
+        "operationId": "MenuParentList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuListReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/treeList": {
+      "post": {
+        "summary": "菜单树",
+        "operationId": "TreeList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemMenu/update": {
+      "put": {
+        "summary": "更新菜单",
+        "operationId": "MenuUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MenuPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "menu"
+        ]
+      }
+    },
+    "/systemRole/add": {
+      "post": {
+        "summary": "添加角色",
+        "operationId": "SystemRoleAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRolePostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/delete": {
+      "delete": {
+        "summary": "删除角色",
+        "operationId": "SystemRoleDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/deleteBatch": {
+      "delete": {
+        "summary": "批量删除角色",
+        "operationId": "SystemRoleDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/find": {
+      "post": {
+        "summary": "查询一个角色",
+        "operationId": "SystemRoleFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/list": {
+      "post": {
+        "summary": "角色列表",
+        "operationId": "SystemRoleList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/parentList": {
+      "post": {
+        "summary": "获取父级角色列表",
+        "operationId": "MenuParentList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRole/update": {
+      "put": {
+        "summary": "更新角色",
+        "operationId": "SystemRoleUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRolePostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRole"
+        ]
+      }
+    },
+    "/systemRoleApi/add": {
+      "post": {
+        "summary": "添加角色",
+        "operationId": "SystemRoleApiAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleApisReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/byRoleId": {
+      "post": {
+        "summary": "通过角色id查询角色",
+        "operationId": "SystemRoleApisByRoleId",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/delete": {
+      "delete": {
+        "summary": "删除角色",
+        "operationId": "SystemRoleApiDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/deleteBatch": {
+      "delete": {
+        "summary": "批量删除角色",
+        "operationId": "SystemRoleApiDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/find": {
+      "post": {
+        "summary": "查询一个角色",
+        "operationId": "SystemRoleApiFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/list": {
+      "post": {
+        "summary": "角色列表",
+        "operationId": "SystemRoleApiList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleApi/update": {
+      "put": {
+        "summary": "角色更新",
+        "operationId": "SystemRoleApiUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleApiPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleApi"
+        ]
+      }
+    },
+    "/systemRoleMenu/add": {
+      "post": {
+        "summary": "添加角色菜单",
+        "operationId": "SystemRoleMenuAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuAddReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/byRoleId": {
+      "post": {
+        "summary": "同过角色id查询菜单",
+        "operationId": "SystemRoleMenusByRoleId",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuAddReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/delete": {
+      "delete": {
+        "summary": "删除角色菜单",
+        "operationId": "SystemRoleMenuDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/deleteBatch": {
+      "delete": {
+        "summary": "批量删除角色菜单",
+        "operationId": "SystemRoleMenuDeleteBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuDelBatchReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/find": {
+      "post": {
+        "summary": "查询一个角色菜单",
+        "operationId": "SystemRoleMenuFindOne",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuDelReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/list": {
+      "post": {
+        "summary": "角色菜单列表",
+        "operationId": "SystemRoleMenuList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuListReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    },
+    "/systemRoleMenu/update": {
+      "put": {
+        "summary": "更新角色菜单",
+        "operationId": "SystemRoleMenuUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SystemRoleMenuPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "systemRoleMenu"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "AdminChangeAvatarReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AdminChangeAvatarReq"
+    },
+    "AdminDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "AdminDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "AdminDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AdminDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "AdminListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "AdminListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "AdminLoginReq": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "title": "AdminLoginReq",
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "AdminPostReq": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": " 头像地址"
+        },
+        "create_by": {
+          "type": "string",
+          "description": " 创建者"
+        },
+        "del_flag": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 删除标志（0代表存在 2代表删除）"
+        },
+        "dept_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 部门ID"
+        },
+        "email": {
+          "type": "string",
+          "description": " 用户邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 用户ID"
+        },
+        "login_date": {
+          "type": "string",
+          "default": "2006-01-02 15:04:05",
+          "description": " 最后登录时间"
+        },
+        "login_ip": {
+          "type": "string",
+          "description": " 最后登录IP"
+        },
+        "nick_name": {
+          "type": "string",
+          "description": " 用户昵称"
+        },
+        "password": {
+          "type": "string",
+          "description": " 密码"
+        },
+        "phonenumber": {
+          "type": "string",
+          "description": " 手机号码"
+        },
+        "remark": {
+          "type": "string",
+          "default": "Empty string",
+          "description": " 备注"
+        },
+        "role_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 角色ID"
+        },
+        "sex": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 用户性别（0男 1女 2未知）"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 帐号状态（0正常 1停用）"
+        },
+        "update_by": {
+          "type": "string",
+          "description": " 更新者"
+        },
+        "user_name": {
+          "type": "string",
+          "description": " 用户账号"
+        },
+        "user_type": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 用户类型（0系统用户）"
+        }
+      },
+      "title": "AdminPostReq",
+      "required": [
+        "avatar",
+        "create_by",
+        "del_flag",
+        "dept_id",
+        "email",
+        "id",
+        "login_date",
+        "login_ip",
+        "nick_name",
+        "password",
+        "phonenumber",
+        "remark",
+        "role_id",
+        "sex",
+        "status",
+        "update_by",
+        "user_name",
+        "user_type"
+      ]
+    },
+    "AdminReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "AdminReply",
+      "required": [
+        "id",
+        "user_name"
+      ]
+    },
+    "AdminUpdatePwdReq": {
+      "type": "object",
+      "properties": {
+        "oldPassword": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "title": "AdminUpdatePwdReq",
+      "required": [
+        "oldPassword",
+        "password"
+      ]
+    },
+    "MenuDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "MenuDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "MenuDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "MenuDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "MenuListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "MenuListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "MenuPostReq": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": " 附加属性"
+        },
+        "path": {
+          "type": "string",
+          "description": " 路由path"
+        },
+        "hidden": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 1是0否在列表隐藏"
+        },
+        "parent_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 父菜单ID"
+        },
+        "name": {
+          "type": "string",
+          "description": " 路由name"
+        },
+        "component": {
+          "type": "string",
+          "description": " 对应前端vue文件路径"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 排序标记"
+        },
+        "title": {
+          "type": "string",
+          "description": " 附加属性"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " ID"
+        }
+      },
+      "title": "MenuPostReq",
+      "required": [
+        "icon",
+        "path",
+        "hidden",
+        "parent_id",
+        "name",
+        "component",
+        "sort",
+        "title",
+        "id"
+      ]
+    },
+    "MenuReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "MenuReply",
+      "required": [
+        "id",
+        "user_name"
+      ]
+    },
+    "RoleApisReq": {
+      "type": "object",
+      "properties": {
+        "role_apis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SystemRoleApiPostReq"
+          }
+        },
+        "role_id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "RoleApisReq",
+      "required": [
+        "role_apis",
+        "role_id"
+      ]
+    },
+    "SystemApiDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "SystemApiDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "SystemApiDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemApiDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "SystemApiListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "SystemApiListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "SystemApiPostReq": {
+      "type": "object",
+      "properties": {
+        "api_group": {
+          "type": "string",
+          "description": " api组"
+        },
+        "description": {
+          "type": "string",
+          "description": " api中文描述"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "method": {
+          "type": "string",
+          "default": "POST",
+          "description": " 请求方法"
+        },
+        "path": {
+          "type": "string",
+          "description": " api路径"
+        }
+      },
+      "title": "SystemApiPostReq",
+      "required": [
+        "api_group",
+        "description",
+        "id",
+        "method",
+        "path"
+      ]
+    },
+    "SystemApiReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "SystemApiReply",
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "SystemDepartmentDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "SystemDepartmentDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "SystemDepartmentDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemDepartmentDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "SystemDepartmentListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "SystemDepartmentListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "SystemDepartmentPostReq": {
+      "type": "object",
+      "properties": {
+        "ancestors": {
+          "type": "string",
+          "description": " 祖级列表"
+        },
+        "create_by": {
+          "type": "string",
+          "description": " 创建者"
+        },
+        "email": {
+          "type": "string",
+          "description": " 邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "leader": {
+          "type": "string",
+          "description": " 负责人"
+        },
+        "name": {
+          "type": "string",
+          "description": " 部门名称"
+        },
+        "parent_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 父级ID"
+        },
+        "phone": {
+          "type": "string",
+          "description": " 联系电话"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 排序"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 部门状态（0正常 1停用）"
+        },
+        "update_by": {
+          "type": "string",
+          "description": " 更新者"
+        }
+      },
+      "title": "SystemDepartmentPostReq",
+      "required": [
+        "ancestors",
+        "create_by",
+        "email",
+        "id",
+        "leader",
+        "name",
+        "parent_id",
+        "phone",
+        "sort",
+        "status",
+        "update_by"
+      ]
+    },
+    "SystemDepartmentReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "SystemDepartmentReply",
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "SystemRoleApiDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleApiDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "SystemRoleApiDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemRoleApiDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "SystemRoleApiListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleApiListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "SystemRoleApiPostReq": {
+      "type": "object",
+      "properties": {
+        "p_type": {
+          "type": "string"
+        },
+        "v0": {
+          "type": "string"
+        },
+        "v1": {
+          "type": "string"
+        },
+        "v2": {
+          "type": "string"
+        },
+        "v3": {
+          "type": "string"
+        },
+        "v4": {
+          "type": "string"
+        },
+        "v5": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleApiPostReq",
+      "required": [
+        "p_type",
+        "v0",
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ]
+    },
+    "SystemRoleApiReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleApiReply",
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "SystemRoleDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "SystemRoleDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemRoleDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "SystemRoleListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "SystemRoleMenuAddReq": {
+      "type": "object",
+      "properties": {
+        "menu_ids": {
+          "type": "string"
+        },
+        "role_id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemRoleMenuAddReq",
+      "required": [
+        "menu_ids",
+        "role_id"
+      ]
+    },
+    "SystemRoleMenuDelBatchReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleMenuDelBatchReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "SystemRoleMenuDelReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SystemRoleMenuDelReq",
+      "required": [
+        "id"
+      ]
+    },
+    "SystemRoleMenuListReq": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "10"
+        },
+        "keyword": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleMenuListReq",
+      "required": [
+        "page",
+        "pageSize"
+      ]
+    },
+    "SystemRoleMenuPostReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "menu_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 菜单ID"
+        },
+        "role_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 角色ID"
+        }
+      },
+      "title": "SystemRoleMenuPostReq",
+      "required": [
+        "id",
+        "menu_id",
+        "role_id"
+      ]
+    },
+    "SystemRoleMenuReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleMenuReply",
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "SystemRolePostReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": " 角色名"
+        },
+        "parent_id": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 父级ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": " 排序"
+        }
+      },
+      "title": "SystemRolePostReq",
+      "required": [
+        "id",
+        "name",
+        "parent_id",
+        "sort"
+      ]
+    },
+    "SystemRoleReply": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "SystemRoleReply",
+      "required": [
+        "id",
+        "name"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    }
+  ]
+}

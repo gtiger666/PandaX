@@ -1,0 +1,16 @@
+info(
+	title: "Panda网关"
+	desc: "Panda网关"
+	author: "panda"
+	qq: "2417920382"
+)
+// system
+import (
+	"system-api/admin.api"
+	"system-api/systemMenu.api"
+	"system-api/systemApi.api"
+	"system-api/systemRole.api"
+	"system-api/systemDepartment.api"
+	"system-api/systemRoleMenu.api"
+	"system-api/systemRoleApi.api"
+)

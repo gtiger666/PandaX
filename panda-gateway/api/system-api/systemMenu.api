@@ -1,0 +1,93 @@
+syntax = "v2"
+
+info(
+	title: "菜单管理"
+	desc: "后台菜单管理"
+	author: "panda"
+    qq: "2417920382"
+)
+
+type(
+	MenuPostReq {
+		Icon      string    `db:"icon" json:"icon,optional"`             // 附加属性
+		Path      string    `db:"path" json:"path,optional"`             // 路由path
+		Hidden    int64     `db:"hidden" json:"hidden,optional"`         // 1是0否在列表隐藏
+		ParentId  int64     `db:"parent_id" json:"parent_id,optional,default=0"`   // 父菜单ID
+		Name      string    `db:"name" json:"name,optional"`             // 路由name
+		Component string    `db:"component" json:"component,optional"`   // 对应前端vue文件路径
+		Sort      int64     `db:"sort" json:"sort,optionalt,default=0"`             // 排序标记
+		Title     string    `db:"title" json:"title,optional"`           // 附加属性
+		Id        int64     `db:"id" json:"id,optional,default=0"`                 // ID
+	}
+	MenuReply {
+		Id       int64  `json:"id"`
+		UserName string `json:"user_name"`
+	}
+
+	MenuListReq {
+		Page     int64  `json:"page,optional,default=1" form:"page,optional,default=1"`
+		PageSize int64  `json:"pageSize,optional,default=10" form:"pageSize,optional,default=10"`
+		Keyword  string `json:"keyword,optional" form:"pageSize,optional"`
+	}
+	MenuDelReq {
+		Id int64 `json:"id"`
+	}
+	MenuDelBatchReq {
+		Ids string `json:"ids"`
+	}
+)
+
+@server(
+	group: menu
+	jwt: Auth
+	middleware: CheckLogin // 路由中间件声明
+)
+service admin-api {
+	@doc(
+       summary: "菜单列表"
+    )
+	@handler MenuList
+	post /systemMenu/list(MenuListReq) returns (MenuReply)
+
+	@doc(
+       summary: "菜单树"
+    )
+	@handler TreeList
+	post /systemMenu/treeList(MenuDelBatchReq) returns (MenuReply)
+
+	@doc(
+       summary: "获取父级菜单"
+    )
+	@handler MenuParentList
+	post /systemMenu/parentList(MenuListReq) returns (MenuReply)
+
+	@doc(
+       summary: "删除菜单"
+    )
+	@handler MenuDelete
+	delete /systemMenu/delete(MenuDelReq) returns (MenuReply)
+
+	@doc(
+       summary: "批量删除菜单"
+    )
+	@handler MenuDeleteBatch
+	delete /systemMenu/deleteBatch(MenuDelBatchReq) returns (MenuReply)
+
+	@doc(
+       summary: "查询一个菜单"
+    )
+	@handler MenuFindOne
+	post /systemMenu/find(MenuDelReq) returns (MenuReply)
+
+	@doc(
+       summary: "添加菜单"
+    )
+	@handler MenuAdd
+	post /systemMenu/add (MenuPostReq) returns (MenuReply)
+
+	@doc(
+       summary: "更新菜单"
+    )
+	@handler MenuUpdate
+	put /systemMenu/update (MenuPostReq) returns (MenuReply)
+}

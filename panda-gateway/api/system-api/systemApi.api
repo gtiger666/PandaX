@@ -1,0 +1,78 @@
+syntax = "v2"
+
+info(
+	title: "Api管理"
+	desc: "Api管理"
+	author: "panda"
+    qq: "2417920382"
+)
+
+type(
+	SystemApiPostReq {
+		ApiGroup      string    `db:"api_group" json:"api_group,optional"`             // api组
+		Description      string    `db:"description" json:"description,optional"`             // api中文描述
+		Id      int64    `db:"id" json:"id,optional"`             //
+		Method      string    `db:"method" json:"method,default=POST"`             // 请求方法
+		Path      string    `db:"path" json:"path,optional"`             // api路径
+
+	}
+	SystemApiReply {
+		Id       int64  `json:"id"`
+		Name string `json:"name"`
+	}
+
+	SystemApiListReq {
+		Page     int64  `json:"page,optional,default=1" form:"page,optional,default=1"`
+		PageSize int64  `json:"pageSize,optional,default=10" form:"pageSize,optional,default=10"`
+		Keyword  string `json:"keyword,optional" form:"pageSize,optional"`
+	}
+	SystemApiDelReq {
+		Id int64 `json:"id"`
+	}
+	SystemApiDelBatchReq {
+		Ids string `json:"ids"`
+	}
+)
+
+@server(
+	group: systemApi
+	jwt: Auth
+	middleware: CheckLogin // 路由中间件声明
+)
+service admin-api {
+	@doc(
+       summary: "api列表"
+    )
+	@handler SystemApiList
+	post /systemApi/list(SystemApiListReq) returns (SystemApiReply)
+
+	@doc(
+       summary: "删除api"
+    )
+	@handler SystemApiDelete
+	delete /systemApi/delete(SystemApiDelReq) returns (SystemApiReply)
+
+	@doc(
+       summary: "批量删除api"
+    )
+	@handler SystemApiDeleteBatch
+	delete /systemApi/deleteBatch(SystemApiDelBatchReq) returns (SystemApiReply)
+
+	@doc(
+       summary: "查询一个api"
+    )
+	@handler SystemApiFindOne
+	post /systemApi/find(SystemApiDelReq) returns (SystemApiReply)
+
+	@doc(
+       summary: "添加api"
+    )
+	@handler SystemApiAdd
+	post /systemApi/add (SystemApiPostReq) returns (SystemApiReply)
+
+	@doc(
+       summary: "更新api"
+    )
+	@handler SystemApiUpdate
+	put /systemApi/update (SystemApiPostReq) returns (SystemApiReply)
+}
