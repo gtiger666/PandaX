@@ -1,4 +1,6 @@
-# Pandax
+<div align="center"><img src="https://github.com/PandaGoAdmin/PandaUi/blob/master/src/assets/logo.png"/></div>
+
+<h1 align="center">PandaX</h1>
 
 #### 介绍
 
